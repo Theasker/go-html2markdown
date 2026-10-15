@@ -24,3 +24,12 @@ Aplicación de escritorio ligera y rápida desarrollada en **Go (Golang)** utili
 2. Inicializa o asegúrate de que el módulo esté listo y descarga las dependencias ejecutando:
    ```bash
    go mod tidy
+   ```
+
+## Compilación
+
+Por defecto, Go incluye información de depuración (símbolos y tablas DWARF) por si ocurre un pánico (crash) para mostrarte el número de línea. Para producción, puedes eliminar toda esta información con los flags -s (omite la tabla de símbolos) y -w (omite la información de depuración).
+
+```bash
+go build -ldflags="-s -w -H windowsgui" -o html2markdown.exe main.go
+```
